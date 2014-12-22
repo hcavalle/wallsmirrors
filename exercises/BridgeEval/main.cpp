@@ -22,7 +22,6 @@ void main(int argc 1, char* argv[]) {
     hands.push_back(h);
   }
 
-
   //evaualate
   //
 }
