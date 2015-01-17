@@ -1,5 +1,4 @@
 // hand class
-#include <list>
 #include "hand.h"
 
 //hand constructor

@@ -1,11 +1,13 @@
-
 #include <iostream>
 #include <fstream>
+#include <list>
+#include "hand.cpp"
+
 using namespace std;
 
-void main(int argc 1, char* argv[]) {
+int main(int argc, char* argv[]) {
 
-  List<Hand> hands;
+  list<Hand> hands;
   Hand h;
   
   FileReader fr;
@@ -24,6 +26,8 @@ void main(int argc 1, char* argv[]) {
 
   //evaualate
   //
+
+  return 0;
 }
 
 
