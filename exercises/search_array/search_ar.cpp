@@ -28,12 +28,16 @@ using namespace std;
  *
  */
 int maxArray(int ar[], int ar_size){
-  if (ar_size == 1)
+  cout<<"start inside max array, size is: "<<ar_size<<endl;
+  if (ar_size < 1){
+    cout<<"exiting max array due to size"<<endl;
     return ar[0];
+  }
   else if (ar_size > 1) {
     int _return;
     if (ar_size == 2) {
       _return = ar[0] > ar[1] ? ar[0] : ar[1];
+      cout<<"return is "<<_return<<endl;
       return _return;
     }
     //call maxarray
@@ -42,15 +46,28 @@ int maxArray(int ar[], int ar_size){
     int left[left_size];
     int right[right_size];
     int max;
+    int l_i = 0;
+    int r_i = 0;
     for (int i = 0; i < (ar_size - 1) ; i++){
-      if (i < left_size)
-        left[i] = ar[i];
-      else
-        right[i] = ar[i];
+      if (i < left_size){
+        left[l_i] = ar[i];
+      	l_i++;
+      }
+      else {
+        right[r_i] = ar[i];
+        r_i++;
+      }
     }
+    cout<<"calling max array left side"<<endl;
     int left_res = maxArray(left, left_size);
+    cout<<"returning from maxarray left side"<<endl;
+    
+    cout<<"calling max array right side"<<endl;
     int right_res = maxArray(right, right_size);
+    cout<<"returning from max arry right side"<<endl;   
+
     max = left_res > right_res ? left_res : right_res;
+    cout<<"about to return with value of max, max is: "<<max<<endl;
     return max;
     
   }
@@ -61,7 +78,7 @@ int main (int argc, char * argv[]) {
   int ar[SIZE] { 1, 6, 8, 3};
   int max = 0;
   cout<<"calling max ar..."<<endl;
-  maxArray(ar, SIZE);
+  max = maxArray(ar, SIZE);
 
   cout<<"max is: "<<max<<endl;
   
